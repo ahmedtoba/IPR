@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import jinja2
 import numpy as np
-import plotly
+import plotly.offline as py
 import plotly.graph_objs as go
 
 app = Flask(__name__)
@@ -57,7 +57,7 @@ def result():
         Present = go.Scatter(x=qop, y=Pwf, name='Present IPR')
         Future = go.Scatter(x=qof, y=Pwff, name='Future IPR')
 
-        myChart = plotly.offline.plot({
+        myChart = py.plot({
                   'data': [Present, Future],
                   'layout': go.Layout(title='Present IPR V.S Future IPR curves', xaxis=dict(title='qo, STB/day'), yaxis=dict(title='Pwf, Psig'), autosize=False,width=600,height=600)
                   },output_type='div', show_link='False',include_plotlyjs='Flase',link_text="")
