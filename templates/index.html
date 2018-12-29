@@ -29,7 +29,11 @@
     <div class="container-fluid">
       <form class="form-horizontal" action="/" method="POST">
         <div class="form-group">
-          <label class="col-sm-1 control-label"><span style="text-decoration:overline">P</span><sub>R</sub></label>
+          <label style="margin-left: 12%">Present Data</label>
+          <label style="margin-left: 11%">Future Data</label>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-1 control-label"><span style="text-decoration:overline">P</span><sub>R</sub>   (psig)</label>
           <div class="col-sm-2">
             <input class="form-control" name="Prp" value="{{Prp}}">
           </div>
@@ -38,7 +42,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-1 control-label">μ<sub>o</sub></label>
+          <label class="col-sm-1 control-label">μ<sub>o</sub>  (cp)</label>
           <div class="col-sm-2">
             <input class="form-control" name="Uop" value="{{Uop}}">
           </div>
@@ -47,7 +51,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-1 control-label">B<sub>o</sub></label>
+          <label class="col-sm-1 control-label">B<sub>o</sub>   (bbl/STB)</label>
           <div class="col-sm-2">
             <input class="form-control" name="Bop" value="{{Bop}}">
           </div>
@@ -74,11 +78,11 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-1 control-label">test q<sub>o</sub></label>
+          <label class="col-sm-1 control-label">test q<sub>o</sub>   (STB/day)</label>
           <div class="col-sm-2">
             <input class="form-control" name="qo" value="{{qo}}">
           </div>
-          <label class="col-sm-1 control-label">test P<sub>wf</sub></label>
+          <label class="col-sm-1 control-label">test P<sub>wf</sub>   (Psig)</label>
           <div class="col-sm-1">
             <input class="form-control" name="pwf" value="{{pwf}}">
           </div>
@@ -90,7 +94,9 @@
           </div>
         </div>
         <div class="col-sm-offset-1">
-          <button type="submit" class="btn btn-default" style="background:#300672; color:white">Submit</button>
+          <a href="#ipr">
+          <input type="submit" class="btn btn-default" value="Generate IPR" style="background:#300672; color:white">
+          </a>
         </div>
 
       </form>
@@ -99,7 +105,7 @@
       <br><br><br>
       {%if result==True%}
 
-      <div class="row">
+      <div class="row" id="ipr">
         <div class="col-xs-offset-1 col-xs-5">
           <table class="table table-striped">
             <thead>
